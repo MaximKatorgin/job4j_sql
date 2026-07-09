@@ -17,9 +17,8 @@ WHERE user_id = 1
 
 SELECT id, name, email, created_at
 FROM users
-WHERE created_at BETWEEN
-          DATE '2026-01-01' AND
-          DATE '2027-01-01';
+WHERE created_at >= DATE '2026-01-01'
+  AND created_at < DATE '2027-01-01';
 
 SELECT id, name, price
 FROM products
