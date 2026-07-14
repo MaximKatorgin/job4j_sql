@@ -2,7 +2,7 @@ SELECT o.status,
        COUNT(*) AS orders_count
 FROM orders AS o
 GROUP BY o.status
-HAVING COUNT(*) > 3;
+HAVING COUNT(*) >= 3;
 
 SELECT u.id,
        u.name,
@@ -32,7 +32,7 @@ SELECT o.id,
 FROM orders AS o
          JOIN order_items AS oi ON oi.order_id = o.id
 GROUP BY o.id
-HAVING SUM(oi.quantity) > 4;
+HAVING SUM(oi.quantity) >= 4;
 
 SELECT u.id,
        u.name,
